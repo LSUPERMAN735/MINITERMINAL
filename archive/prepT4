@@ -1,0 +1,69 @@
+vstpd.conf 
+write_enable=YES
+
+"Voir auth.log""Autoriser l'upload/modif via Vsftpd""Lister le répertoire Root""Voir le statut Vsftpd""Lancer le service Vsftpd""Stopper le service Vsftpd""Redémarrer le service Vsftpd""Éditer le fichier de configuration Vsftpd""Éditer le fichier de log Vsftpd""Installer Ngix""Installer TFPD HPA" "Afficher man sshd_config""Afficher Vsftpd.conf""Tree rep logs sysadmin1""Voir auth.log"
+
+"Autoriser l'upload/modif via Vsftpd"
+cp vstpd.conf /etc/vsftpd.conf ;;
+"Lister le répertoire Root")
+ls /root ;;
+"Voir le statut Vsftpd")
+systemctl status vsftpd ;;
+"Lancer le service Vsftpd")
+systemctl start vsftpd ;;
+"Stopper le service Vsftpd")
+systemctl stop vsftpd ;;
+"Redémarrer le service Vsftpd")
+systemctl restart vsftpd ;;
+"Éditer le fichier de configuration Vsftpd")
+nano /etc/vsftpd.conf ;;
+"Éditer le fichier de log Vsftpd")
+nano /var/log/vsftpd.log ;;
+"Installer Ngix")
+sudo apt-get install ngix ;;
+"Installer TFPD HPA")
+sudo apt-get install tfpd-hpa ;;
+"Afficher man sshd_config")
+man sshd_config ;;
+"Afficher Vsftpd.conf")
+man vsftpd.conf ;;
+"Tree rep logs sysadmin1")
+tree /home/sysadmin1/logs ;;
+"Voir auth.log")
+sudo ls -l /var/log/auth.log ;;
+
+
+"Installer ppoe") 
+sudo apt-get install ppoe ;;
+"Installer pppoeconf") ;;
+sudo apt-get install pppoeconf
+"Installer Wireshark")
+sudo apt-get install wireshark ;;
+
+
+
+
+
+
+
+
+
+
+auth-lg | grep sshd
+
+"Afficher secrets")
+cat /etc/ppp/pap-secrets ;;
+
+"Afficher man ppoe-server")
+man ppoe-server ;;
+"Éditer les options ppp")
+nano /etc/ppp/options ;;
+"Config auto des cartes")
+sudo Dhclient eth0 ;;
+"Retirer les IP " )
+ifconfig eth0 0.0.0.0 ;;
+"Retirer les IP " "Config auto des cartes" 
+"Afficher secrets" "Afficher man ppoe-server" "Éditer les options ppp" "Config auto des cartes"
+
+"Afficher les nvlles lignes ajoutés ")
+tail -n 0 -f ;;
