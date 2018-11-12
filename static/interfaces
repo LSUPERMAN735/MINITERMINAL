@@ -1,0 +1,7 @@
+#/etc/network/interfaces 
+#cp ./static/interfaces /etc/network/interfaces ici en mode 10+numtable soit 14 
+auto eth0
+iface eth0 inet static 
+	adress 203.0.14.10/24
+#ifdown eth0 && cp ./static/interfaces /etc/network/interfaces  && ifup eth0
+ 
