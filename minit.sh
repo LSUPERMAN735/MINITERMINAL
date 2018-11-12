@@ -112,21 +112,21 @@ do
 		"Site à visiter")
 		echo "https://www.leshirondellesdunet.com/chmod-et-chown   www.onlineconversion.com/html_chmod_calculator.htm" ;;
 		"Autoriser l'upload/modif via Vsftpd")
-		cp vstpd.conf /etc/vsftpd.conf ;;
+		sudo cp ./vsftpd/vsftpd.conf /etc/vsftpd.conf ;;
 		"Lister le répertoire Root")
-		ls /root ;;
+		sudo ls /root ;;
 		"Voir le statut Vsftpd")
-		systemctl status vsftpd ;;
+		sudo systemctl status vsftpd ;;
 		"Lancer le service Vsftpd")
-		systemctl start vsftpd ;;
+		sudo systemctl start vsftpd ;;
 		"Stopper le service Vsftpd")
-		systemctl stop vsftpd ;;
+		sudo systemctl stop vsftpd ;;
 		"Redémarrer le service Vsftpd")
-		systemctl restart vsftpd ;;
+		sudo systemctl restart vsftpd ;;
 		"Éditer le fichier de configuration Vsftpd")
-		nano /etc/vsftpd.conf ;;
+		sudo nano /etc/vsftpd.conf ;;
 		"Éditer le fichier de log Vsftpd")
-		nano /var/log/vsftpd.log ;;
+		sudo nano /var/log/vsftpd.log ;;
 		"Installer Nginx")
 		sudo apt-get install nginx ;;
 		"Installer TFTPD HPA")
