@@ -1,0 +1,25 @@
+PREP EXO 5 
+ 
+https://rt1c.org/TP/Bases%20des%20systèmes%20d%27exploitation/TP2%20-%20Shell%20Unix/script.txt 
+ 
+ 
+Prep exo 6 
+if [ -f lefichier ]  
+then  
+   // le fichier existe  
+else   
+   // le fichier existe pas  
+fi 
+ 
+https://www.it-connect.fr/verifier-la-presence-dun-repertoire-ou-dun-fichier/ 
+https://www.debian-fr.org/t/verifier-si-un-fichier-existe-dans-un-script-bash/14550 
+http://www.linux-france.org/article/man-fr/man1/test-1.html 
+
+
+
+https://ensiwiki.ensimag.fr/index.php?title=Erreurs_fr%C3%A9quentes_dans_les_scripts_shell
+https://forum.ubuntu-fr.org/viewtopic.php?id=1386971
+https://cyberlearn.hes-so.ch/mod/page/view.php?id=370935&lang=en
+
+
+https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php source méthd read
