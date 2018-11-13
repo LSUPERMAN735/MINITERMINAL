@@ -1,6 +1,6 @@
 PREP EXO 5 
  
-https://rt1c.org/TP/Bases%20des%20systèmes%20d%27exploitation/TP2%20-%20Shell%20Unix/script.txt 
+https://rt1c.org/TP/Bases%20des%20systÃ¨mes%20d%27exploitation/TP2%20-%20Shell%20Unix/script.txt 
  
  
 Prep exo 6 
@@ -22,4 +22,4 @@ https://forum.ubuntu-fr.org/viewtopic.php?id=1386971
 https://cyberlearn.hes-so.ch/mod/page/view.php?id=370935&lang=en
 
 
-https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php source méthd read
+https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php source mÃ©thd read
