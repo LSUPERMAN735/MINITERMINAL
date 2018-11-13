@@ -1,0 +1,6 @@
+#/etc/network/interfaces 
+#cp ./dynamic/interfaces /etc/network/interfaces ici en mode 10+numtable soit 14 
+auto eth0
+iface eth0 inet dhcp
+#ifdown eth0 && cp ./dynamic/interfaces /etc/network/interfaces  && ifup eth0
+ 
