@@ -1,7 +1,6 @@
-#!/bin/bash
 echo "*****MENU MINI TERMINAL******"
 PS3="Veuillez saisir le numéro de votre choix:"
-options=( "Afficher la date" "Afficher la liste des personnes connectées" "Afficher la liste des processus" "Lister les fichiers" "Voir tous les processus IRL" "Nettoyer le Shell" "Créer un répertoire nommé test" "Éditer ce script avec VIM" "Éditer ce script avec NANO" "Afficher son IP" "Afficher l'adresse passerelle par défaut" 	"Afficher l'adresse serveur DNS" "Afficher INFO CARTE RÉSEAU" "Afficher le hostname" "Afficher le répertoire actuel" "Mettre à jour apt" "Installer Apache2" "Installer Vsftpd" "Installer Gxmessage" "Installer Cowsay" "Installer Filezilla" "Installer Mysql-server" "Fermer" "Voir le fichier du hostname" "Désactiver la carte réseau (eth0)" "Modifier le fichier d'interface réseau" "Réactiver la carte réseau(eth0)" "Passer en mode Root" "Télecharger panic-master" "Dézipper panic-master" "Modifier votre mot de passe" "Ajouter maelys au groupe developpeurs" "Tuer tous les processus (dhclient)" "Vérifier branchement eth0" "Mettre à jour le gestionnaire apt upgrade" "Voir l'état du service apache2" "Démarrer le service apache2" "Arrêter le service apache2" "Redémarrer le service apache2 ex : appliquer la modif" "Voir le log des accès webs d'Apache2" "Voir le log principal d'Apache2" "Lister le répertoire var" "Désinstaller Apache2" "Voir la config du serveur SSH" "Voir log des accès SSH" "Installer mssh (multi-ssh)" "Installer Jupyter" "Installer Fritzing" "Installer les Environnements Graphique xorg, awesome" "Lancer l'EG" "Redémarrer le système" "Crédits" "Site à visiter" "Autoriser l'upload/modif via Vsftpd" "Lister le répertoire Root" "Voir le statut Vsftpd" "Lancer le service Vsftpd" "Stopper le service Vsftpd" "Redémarrer le service Vsftpd" "Éditer le fichier de configuration Vsftpd" "Éditer le fichier de log Vsftpd" "Installer Nginx" "Installer TFTPD HPA" "Voir man sshd_config" "Voir man Vsftpd.conf" "Tree rep logs sysadmin1" "Voir auth.log" "Installer un paquet" "Man cmd" "Retirer un fichier" "Menu" )
+options=( "Afficher la date" "Afficher la liste des personnes connectées" "Afficher la liste des processus" "Lister les fichiers" "Voir tous les processus IRL" "Nettoyer le Shell" "Créer un répertoire nommé test" "Éditer ce script avec VIM" "Éditer ce script avec NANO" "Afficher son IP" "Afficher l'adresse passerelle par défaut" 	"Afficher l'adresse serveur DNS" "Voir info Interface RÉSEAU" "Afficher le hostname" "Afficher le répertoire actuel" "Mettre à jour apt" "Installer Apache2" "Installer Vsftpd" "Installer Gxmessage" "Installer Cowsay" "Installer Filezilla" "Installer Mysql-server" "Fermer" "Voir le fichier du hostname" "Désactiver la carte réseau (eth0)" "Modifier le fichier d'interface réseau" "Réactiver la carte réseau(eth0)" "Recharger la config réseau eth0" "Passer en mode Root" "Télecharger et dézipper panic-master" "Modifier votre mot de passe" "Ajouter maelys au groupe developpeurs" "Tuer tous les processus (dhclient)" "Vérifier branchement eth0" "Mettre à jour le gestionnaire apt upgrade" "Voir l'état du service apache2" "Démarrer le service apache2" "Arrêter le service apache2" "Redémarrer le service apache2 ex : appliquer la modif" "Voir le log des accès webs d'Apache2" "Voir le log principal d'Apache2" "Lister le répertoire var" "Désinstaller Apache2" "Voir la config du serveur SSH" "Voir log des accès SSH" "Installer mssh (multi-ssh)" "Installer Jupyter" "Installer Fritzing" "Installer les Environnements Graphique xorg, awesome" "Lancer l'EG" "Redémarrer le système" "Crédits" "Site à visiter" "Autoriser l'upload/modif via Vsftpd" "Lister le répertoire Root" "Voir le statut Vsftpd" "Lancer le service Vsftpd" "Stopper le service Vsftpd" "Redémarrer le service Vsftpd" "Éditer le fichier de configuration Vsftpd" "Éditer le fichier de log Vsftpd" "Installer Nginx" "Installer TFTPD HPA" "Voir man sshd_config" "Voir man Vsftpd.conf" "Tree rep logs sysadmin1" "Voir auth.log SSH" "Installer un paquet" "SSH vers 172.16.110." "Tuer le processus proc" "Man cmd" "Retirer un fichier" "Menu" )
 select opt in "${options[@]}"
 do
     case $opt in
@@ -22,16 +21,16 @@ do
 		"Créer un répertoire nommé test")
 		mkdir test  "vous avez créé le répertoire test";;  
 		"Éditer ce script avec VIM")
-		vi menu8e ;; 
+		vi minit.sh ;; 
 		"Éditer ce script avec NANO")
-		nano menu8e ;;
+		nano minit.sh ;;
 		"Afficher son IP")
 		ip a ;;
 		"Afficher l'adresse passerelle par défaut")
 		ip route ;;
 		"Afficher l'adresse serveur DNS")
-		cat /etc/resolve.conf ;;
-		"Afficher INFO CARTE RÉSEAU")
+		cat /etc/resolv.conf ;;
+		"Voir info Interface RÉSEAU")
 		cat /etc/network/interfaces ;;
 		"Afficher le hostname")
 		cat /etc/hostname ;;
@@ -58,13 +57,13 @@ do
 		"Modifier le fichier d'interface réseau")
 		sudo nano /etc/network/interfaces ;;
 		"Réactiver la carte réseau(eth0)")
-		sudo ifup eth0
-#		"Passer en mode Root")
-#		su ;;
-		"Télecharger panic-master"
-		wget https://github.com/brice-augustin/panic/archive/master.zip ;; #error
-		"Dézipper panic-master")  #par conséquent erreur 
-		unzip master.zip ;;
+		sudo ifup eth0 ;; 
+		"Recharger la config réseau eth0")
+		sudo ifdown eth0 && sudo ifup eth0 ;;
+		"Passer en mode Root")
+		su ;;
+		"Télecharger et dézipper panic-master")
+		wget https://github.com/brice-augustin/panic/archive/master.zip && unzip master.zip ;;
 		"Modifier votre mot de passe")
 		passwd ;;
 		"Ajouter maelys au groupe developpeurs")
@@ -105,7 +104,7 @@ do
 		sudo apt-get install xorg && sudo apt-get install awesome ;;
 		"Lancer l'EG")
 		startx
-		"Redémarrer le système" #
+		"Redémarrer le système" 
 		sudo reboot ;; #
 		"Crédits")
 		echo "Je vous remercie d'avoir utilisé ce sublime menu LS735 AAA" ;;
@@ -138,18 +137,25 @@ do
 		"Tree rep logs sysadmin1")
 		tree /home/sysadmin1/logs ;;
 		"Voir auth.log")
-		sudo ls -l /var/log/auth.log ;;
+		sudo cat -l /var/log/auth.log ;;
 		"Installer un paquet")
 		read packname
 		sudo apt-get install $packname ;;
+		"SSH vers 172.16.110.")
+		read sIP
+		ssh 172.16.110.$sIP ;;
+		"Tuer le processus proc")
+		read proc
+		killall $proc ;;
 		"Man cmd")
 		read mcmd 
 		man $mcmd ;;
 		"Retirer un fichier")
 		read rmz 
-		rm $rmz ;;		
+		rm $rmz ;;
 		"Menu")
 		./menu8e ;;
         *) echo "L'option $REPLY est invalide désolé nous ne pouvons aboutir à votre demande";;
     esac
 done
+
