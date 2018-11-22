@@ -1,0 +1,57 @@
+#!/bin/bash
+echo "*****Menu Général******"
+PS3="Veuillez saisir le numéro de votre choix:"
+options=( "Afficher la date" "Afficher la liste des personnes connectées" "Afficher la liste des processus" "Man cmd" "Retirer un fichier" "SSH vers 172.16.110." "Résoudre l'adresse www." "Add IUT gateway" "Passer en mode statique" "Passer en mode dynamique" "Redémarrage" "nano Files" "exec cmd" "dhclient eth1" "Ajouter DNS" "hostname conf" "Vérif install dpkg" "Voir les nvlles lines d'un fich" "Quitter")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Afficher la date")
+            date ;;
+        "Afficher la liste des personnes connectées")
+            who ;;
+        "Afficher la liste des processus")
+            ps ;;
+		"Man cmd")
+		read mcmd 
+		man $mcmd ;;
+		"Retirer un fichier")
+		read rmz 
+		rm $rmz ;;
+		"SSH vers 172.16.110.")
+		read sIP && ssh 192.168.0.$sIP ;;
+    	"Résoudre l'adresse www.")
+		read HDNS
+		host www.$HDNS ;;
+		"Add IUT gateway")
+		sudo cp ./gateway/interfaces /etc/network/interfaces ;;
+		"Passer en mode statique")
+		sudo cp ./static/interfaces /etc/network/interfaces ;;
+		"Passer en mode dynamique")
+		sudo cp ./dynamic/interfaces /etc/network/interfaces ;;
+		"Redémarrage")
+		sudo reboot ;; 
+	    "nano Files")
+		read Nf
+		sudo nano $Nf;;
+		"exec cmd")
+		read exec
+		$exec ;;
+		"dhclient eth1")
+		sudo dhclient eth1 ;;  
+		"Ajouter DNS")
+		cp ./resolv/resolv.conf /etc/resolv.conf ;;
+		"hostname conf")
+		read hoster
+		sudo hosnamectl set-hostname $hoster ;;
+		"Vérif install dpkg")
+		read pkgdpkg
+		dpkg -s $pkgdpkg ;;
+		"Voir les nvlles lines d'un fich")
+		read retio
+		tail -n -0 -f $retio ;; 
+		"Quitter")
+            break ;;
+
+        *) echo "L'option $REPLY est invalide";;
+    esac
+done
