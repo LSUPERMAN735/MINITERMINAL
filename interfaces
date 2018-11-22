@@ -1,0 +1,10 @@
+#/etc/network/interfaces 
+#cp ./static/interfaces /etc/network/interfaces ici en mode 10+numtable soit 14 
+auto lo
+iface lo inet loopback 
+auto eth0
+iface eth0 inet static 
+	address 203.0.14.1/24
+	gateway 172.110.16.1  #passerelle par défaut
+#ifdown eth0 && cp ./static/interfaces /etc/network/interfaces  && ifup eth0
+ 
