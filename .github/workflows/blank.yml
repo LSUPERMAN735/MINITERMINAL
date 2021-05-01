@@ -34,4 +34,4 @@ jobs:
         run: |
           sudo ip a
           sudo chmod +x minit.sh
-          sudo ./minit.sh
+          sudo sh minit.sh
